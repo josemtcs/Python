@@ -1,0 +1,29 @@
+# Paso 1: Crear una lista vacía para la agenda de contactos
+agenda_contactos = []
+
+# Paso 2: Crear un bucle para ingresar contactos
+while True:
+    # Paso 3: Solicitar datos del contacto al usuario
+    nombre = input("Ingresa el nombre del contacto: ")
+    telefono = input("Ingresa el teléfono del contacto: ")
+    email = input("Ingresa el email del contacto: ")
+
+    # Crear un diccionario con los datos del contacto
+    contacto = {
+        "nombre": nombre,
+        "teléfono": telefono,
+        "email": email
+    }
+
+    # Añadir el diccionario a la lista de contactos
+    agenda_contactos.append(contacto)
+
+    # Preguntar al usuario si desea añadir otro contacto
+    continuar = input("¿Deseas añadir otro contacto? (sí/no): ").strip().lower()
+    if continuar != "sí":
+        break
+
+# Paso 4: Mostrar todos los contactos almacenados
+print("\nAgenda de Contactos:")
+for contacto in agenda_contactos:
+    print(f"Nombre: {contacto['nombre']}, Teléfono: {contacto['teléfono']}, Email: {contacto['email']}")
